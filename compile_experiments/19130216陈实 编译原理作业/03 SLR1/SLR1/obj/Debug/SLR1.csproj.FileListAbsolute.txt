@@ -1,0 +1,18 @@
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.Properties.Resources.resources
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.csproj.GenerateResource.Cache
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\bin\Debug\SLR1.exe.config
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\bin\Debug\SLR1.exe
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\bin\Debug\SLR1.pdb
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.exe
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.pdb
+I:\桌面文件\编译原理\pzp\SLR1\SLR1\obj\Debug\SLR1.Form1.resources
+H:\27 编译原理作业\03 SLR1\SLR1\bin\Debug\SLR1.exe.config
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.exe
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.pdb
+H:\27 编译原理作业\03 SLR1\SLR1\bin\Debug\SLR1.exe
+H:\27 编译原理作业\03 SLR1\SLR1\bin\Debug\SLR1.pdb
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.csprojResolveAssemblyReference.cache
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.Form1.resources
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.Properties.Resources.resources
+H:\27 编译原理作业\03 SLR1\SLR1\obj\Debug\SLR1.csproj.GenerateResource.Cache

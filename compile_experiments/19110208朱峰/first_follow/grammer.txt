@@ -1,0 +1,8 @@
+Z::=IAB
+A::=L|{M}
+L::=S|Z
+I::=if(exp)
+E::=else
+S::=sen
+B::=@|EA
+M::=LM|@

@@ -1,0 +1,45 @@
+若遇到if,则 设 des = "if" && flag = 1; //进入子层
+遇到 ) 且 des ＝= "if"&&flag==1  则 flag ＝ 2; //if(...) 右括号扫描完毕
+des ＝= "if"&&flag==2 时，若遇到 {   则 flag ＝ 3; //if(...){...}可能不止一条语句
+							否则  flag = 4; 只有一条语句
+
+
+若遇到 else 
+1.看刚才的子层的flag 是否为 0,若刚才的flag ＝ 0;则 if... else ...不匹配，否则匹配
+2.则设 des = "else" && flag = -1; //进入子层
+若des = "else" && flag = -1; 若遇到 {   则 flag ＝ 3; //else{...}可能不止一条语句
+							否则  flag = 4; // else ...;只有一条语句
+							
+							
+							
+若遇到 if ,若 des = "else" 设des ＝ "elseif" ,设flag ＝ 1;//else if 的情况，无需再次进入子层，因为刚才else中已经进入过了。
+遇到 ) 且 des ＝= "elseif"&&flag==1  则 flag ＝ 2; //else if(...) 右括号扫描完毕
+若des = "elseif" && flag = 2; 若遇到 {   则 flag ＝ 3; //else if{...}可能不止一条语句
+							否则  flag = 4; // else if ...;只有一条语句
+							
+
+若先前有连续的if 或 else if ,else（可用刚才的des和flag值判断），而当前又在 if 或 else if 或 else 层,此时遇到的不是else
+则：
+	若当前的层 flag ＝ 4,即没有{}, 则一直向上退到带有{}的那一层，或者是最外层的 if,else if,else
+	若当前的层 flag ＝ 3,即有{},则将刚才的子层的flag = 0，表明此时连续的 if()...else if() ...;这样的情况已经结束
+
+
+遇到 ; 或 
+若此时属于 else 层,若父层的flag == 4,即没有{},则向上退2层.
+				   若父层的flag == 3,即有{},则向上退1层
+
+
+
+if()
+   if()
+		if()
+		{
+			if()...;
+			else if() ...;
+			else if() ...;
+			...;
+			...;
+			...;
+		}
+		else ...;
+   else ...;

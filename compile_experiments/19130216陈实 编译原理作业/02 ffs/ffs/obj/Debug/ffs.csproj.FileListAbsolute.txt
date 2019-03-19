@@ -1,0 +1,18 @@
+I:\桌面文件\编译原理\pzp\ffs\ffs\bin\Debug\ffs.exe
+I:\桌面文件\编译原理\pzp\ffs\ffs\bin\Debug\ffs.pdb
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.Form1.resources
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.Properties.Resources.resources
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.csproj.GenerateResource.Cache
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.exe
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.pdb
+I:\桌面文件\编译原理\pzp\ffs\ffs\obj\Debug\ffs.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.exe
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.pdb
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\bin\Debug\ffs.exe
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\bin\Debug\ffs.pdb
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.Form1.resources
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.Properties.Resources.resources
+I:\桌面文件\编译原理\pzp\ffs修改\ffs\obj\Debug\ffs.csproj.GenerateResource.Cache
+H:\27 编译原理作业\02 ffs\ffs\obj\Debug\ffs.exe
+H:\27 编译原理作业\02 ffs\ffs\obj\Debug\ffs.pdb

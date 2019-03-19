@@ -1,0 +1,13 @@
+char
+short
+float
+long
+double
+struct
+enum
+const
+int
+union
+signed
+unsigned
+void

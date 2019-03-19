@@ -1,0 +1,79 @@
+﻿#include <iostream>
+#include<vector>
+using namespace std;
+#define N 100
+struct Edge
+{
+     int next;
+     int to;
+};
+int count1=0;
+int head[N];
+int v1[N];
+int v2[N];
+vector<Edge> edge;
+void add(int u,int v)
+{
+	Edge a={head[u],v};
+	edge.push_back(a);
+	head[u] = count1++;
+}
+int min(int a,int b)
+{
+	if (a>b)
+	{
+		return b;
+	}
+	else
+	{
+		return a;
+	}
+}
+int max(int a,int b)
+{
+	if (a>b)
+	{
+		return a;
+	}
+	else
+	{
+		return b;
+	}
+}
+void dfs(int s)
+{
+	if (head[s]==-1)
+	{
+		v1[s]=1;
+		v2[s]=0;
+		return;
+	}
+	int sum1=0;
+	int sum2=0;
+	for(int i=head[s];i!=-1;i=edge[i].next)
+	{
+			dfs(edge[i].to);
+			sum1=sum1+v1[edge[i].to];
+			v2[s]=v2[s]+max(v1[edge[i].to],v2[edge[i].to]);
+	}
+	v1[s]=sum2+1;
+}
+void main()
+{
+	for (int i = 0; i < N; i++)
+	{
+		head[i]=-1;
+		v1[i]=0;
+		v2[i]=0;
+	}
+	int n,a,b;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cin>>a>>b;
+		add(a,b);
+	}
+	 dfs(0);
+	 cout<<(v1[0]>v2[0]?v1[0]:v2[0])<<endl;
+
+}

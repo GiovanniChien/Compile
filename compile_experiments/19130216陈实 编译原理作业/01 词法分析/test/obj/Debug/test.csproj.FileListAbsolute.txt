@@ -1,0 +1,40 @@
+I:\桌面文件\编译原理\test\test\bin\Debug\test.exe
+I:\桌面文件\编译原理\test\test\bin\Debug\test.pdb
+I:\桌面文件\编译原理\test\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\test\test\obj\Debug\test.Form1.resources
+I:\桌面文件\编译原理\test\test\obj\Debug\test.Properties.Resources.resources
+I:\桌面文件\编译原理\test\test\obj\Debug\test.csproj.GenerateResource.Cache
+I:\桌面文件\编译原理\test\test\obj\Debug\test.exe
+I:\桌面文件\编译原理\test\test\obj\Debug\test.pdb
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.exe
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.pdb
+I:\桌面文件\编译原理\v0.2\test\bin\Debug\test.exe
+I:\桌面文件\编译原理\v0.2\test\bin\Debug\test.pdb
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.Form1.resources
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.Properties.Resources.resources
+I:\桌面文件\编译原理\v0.2\test\obj\Debug\test.csproj.GenerateResource.Cache
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.exe
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.Form1.resources
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.Properties.Resources.resources
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.csproj.GenerateResource.Cache
+I:\桌面文件\编译原理\v0.2 - 副本\test\bin\Debug\test.exe
+I:\桌面文件\编译原理\v0.2 - 副本\test\bin\Debug\test.pdb
+I:\桌面文件\编译原理\v0.2 - 副本\test\obj\Debug\test.pdb
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.exe
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.pdb
+I:\桌面文件\编译原理\v0.3\test\bin\Debug\test.exe
+I:\桌面文件\编译原理\v0.3\test\bin\Debug\test.pdb
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.Form1.resources
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.Properties.Resources.resources
+I:\桌面文件\编译原理\v0.3\test\obj\Debug\test.csproj.GenerateResource.Cache
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.exe
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.pdb
+H:\27 编译原理作业\01 词法分析\test\bin\Debug\test.exe
+H:\27 编译原理作业\01 词法分析\test\bin\Debug\test.pdb
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.Form1.resources
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.Properties.Resources.resources
+H:\27 编译原理作业\01 词法分析\test\obj\Debug\test.csproj.GenerateResource.Cache

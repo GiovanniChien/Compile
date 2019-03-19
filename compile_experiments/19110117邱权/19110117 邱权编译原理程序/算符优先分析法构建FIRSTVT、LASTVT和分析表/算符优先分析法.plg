@@ -1,0 +1,35 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 算符优先分析法 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\quan\AppData\Local\Temp\RSP4C90.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/算符优先分析法.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Users\quan\Desktop\算符优先分析法构建FIRSTVT、LASTVT和分析表\算符.cpp"
+]
+Creating command line "cl.exe @C:\Users\quan\AppData\Local\Temp\RSP4C90.tmp" 
+Creating temporary file "C:\Users\quan\AppData\Local\Temp\RSP4C91.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/算符优先分析法.pdb" /debug /machine:I386 /out:"Debug/算符优先分析法.exe" /pdbtype:sept 
+".\Debug\算符.obj"
+]
+Creating command line "link.exe @C:\Users\quan\AppData\Local\Temp\RSP4C91.tmp"
+<h3>Output Window</h3>
+Compiling...
+算符.cpp
+C:\Users\quan\Desktop\算符优先分析法构建FIRSTVT、LASTVT和分析表\算符.cpp(376) : warning C4715: 'CreatePreTable::IsT' : not all control paths return a value
+C:\Users\quan\Desktop\算符优先分析法构建FIRSTVT、LASTVT和分析表\算符.cpp(384) : warning C4715: 'CreatePreTable::IsN' : not all control paths return a value
+C:\Users\quan\Desktop\算符优先分析法构建FIRSTVT、LASTVT和分析表\算符.cpp(498) : warning C4715: 'CreatePreTable::GetLocation' : not all control paths return a value
+Linking...
+
+
+
+<h3>Results</h3>
+算符优先分析法.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,12 @@
+set
+ALPHA = {A-Z,a-z,_};
+BETA = {0-9};
+end set
+
+M
+ALPHA  BETA
+  1     -1
+  1      1
+end M
+
+

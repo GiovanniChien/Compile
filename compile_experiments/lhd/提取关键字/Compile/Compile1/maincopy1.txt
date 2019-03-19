@@ -1,0 +1,103 @@
+#include <iostream>
+#include <sstream>
+#include <fstream>
+#include <string>
+#include <map>
+using namespace std;
+
+extern void defWordsHash(string s[],int n,const char fileName[]);
+extern int defWordsHashSearch(const string defWords[],const int n,const string find);  //hash查找
+
+
+bool inWord(char ch)  //正在扫描一个词的过程中
+{
+	return ch == '_' || (ch>='A' && ch<='Z') || (ch>='a' && ch<='z') || (ch>='0' && ch<='9');
+}
+
+bool checkVariable(string variable)
+{
+	const char* var = variable.c_str();
+	if(var[0]=='_' || (var[0]>='A' && var[0]<='Z') || (var[0]>='a' && var[0]<='z'))	{ //第一个字符为'_'或英文字母
+		for(int i=1;i<variable.size();++i)
+		{
+			bool right = (var[i]=='_' || (var[i]>='A' && var[i]<='Z')          //除第一个字符外，可以为'_'，英文字母，数字
+				|| (var[i]>='a' && var[i]<='z') || (var[i]>='0' && var[i]<='9'));
+			if(right == false) return false;
+		}
+		return true;
+	}
+	else return false;
+}
+void main()
+{
+	string defw[26];
+	defWordsHash(defw,26,"defineWords.txt");
+
+	ifstream in("maintest.cpp");
+	bool inNote = false; //在注释中扫描的标记
+	bool defining = false; //正在变量定义过程中
+	bool defVar = false;	//正在定义某一个变量过程中
+	int line = 1; //扫描到哪一行
+	
+	for(string s;getline(in,s);++line)
+	{
+		const char *ps = s.c_str();
+		const int len = s.length();
+		int count = -1;
+		for(int i = 0;i<len;++i)
+		{
+			char word[40];
+			if(i+1<len && ps[i]=='/' && ps[i+1]=='/') break; //遇到 // 跳到下一行
+			if(i+1<len && ps[i]=='/' && ps[i+1]=='*') {inNote = true;}	//遇到 /* 则将inNote标记为 true
+			if(i+1<len && ps[i]=='*' && ps[i+1]=='/') {inNote = false;  i+=2;} //遇到 */ 则将inNote标记为 false
+			if(inNote == false && i<len)
+			{
+				if(inWord(ps[i]))
+				{
+					word[++count] = ps[i];
+				}
+				else {		//不在扫描词的过程中
+					if(count>=0) {
+						word[++count] = 0;
+						string sword(word);
+						if(defWordsHashSearch(defw,26,sword) != -1) //遇到定义的关键字
+						{
+							defining = true;	//标记设置为正在定义变量过程中
+							//
+						}
+						else if(defining == true)
+						{				
+							//bool varOK = 							
+							if(defVar == false && !checkVariable(sword)) //此时sword是被定义的变量名
+							{
+								cout<<"第"<<line<<"行 "<<sword<<" 定义错误"<<endl;								
+							}
+							else if(defVar == true) 
+							{
+								cout<<"第"<<line<<"行 "<<sword<<endl;
+							}
+							if(defVar == false)
+							defVar = true; //正在某个变量定义和赋值过程中；
+						}
+						
+					}
+					count = -1;
+					if(ps[i] == ';') {
+						defining = false;  //一句话结束，定义结束
+						defVar = false;
+					}
+					else if(ps[i] == ',')
+					{
+						defVar = false;
+					}
+
+				}
+			}
+		}
+		cout<<endl;
+
+		
+	
+	}
+	in.close();
+}

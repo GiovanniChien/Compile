@@ -1,0 +1,99 @@
+﻿#include <iostream>
+#include <algorithm>
+#define N 7
+using namespace std;
+
+
+void printTrace(int *loc,int n,int *a)
+{
+	int tmp=loc[n];
+	cout<<a[n]<<" ";
+	while (tmp!=-1)
+	{
+		cout<<a[tmp]<<" ";
+		tmp=loc[tmp];
+	}
+}
+
+int main()
+{
+	//原始数据
+	int a[N] = { 13,50,20,10,60,15,30 };
+	
+	//记录数组,初始值为-1
+	int res[N];
+	memset(res,-1,sizeof(res));
+	
+
+	//记录位置数组
+	int loc[N];
+	memset(loc,-1,sizeof(loc));
+
+	//初始情况
+	res[0]=a[0];
+	res[1]=a[1];
+	res[2]=a[0]+a[2];
+	loc[2]=0;
+	
+	
+	for (int i=3;i<N;i++)
+	{
+		int cmp=-1;
+		int pre_loc=-1;;
+		//取出之前值最大的
+		if (res[i-2]<=res[i-3])
+		{
+			cmp=res[i-3];
+			pre_loc=i-3;
+		}
+		else
+		{
+			cmp=res[i-2];
+			pre_loc=i-2;
+		}
+		
+		//记录
+		res[i]=cmp+a[i];
+		loc[i]=pre_loc;
+	}
+	
+	for (int j=0;j<N;j++)
+	{
+		cout<<j+1<<"\t";
+	}
+	cout<<endl;
+
+	for (j=0;j<N;j++)
+	{
+		cout<<a[j]<<"\t";
+	}
+	cout<<endl;
+
+	for (j=0;j<N;j++)
+	{
+		cout<<res[j]<<"\t";
+	}
+	cout<<endl;
+
+	for (int k=0;k<N;k++)
+	{
+		cout<<loc[k]<<"\t";
+	}
+	
+	cout<<endl;
+	
+	//输出结果值
+	if (res[N-1]<=res[N-2])
+	{
+		cout<<res[N-2]<<endl;
+		printTrace(loc,N-2,a);
+	}
+	else
+	{
+		cout<<res[N-1]<<endl;
+		printTrace(loc,N-1,a);
+	}
+
+	return 0;
+}
+
