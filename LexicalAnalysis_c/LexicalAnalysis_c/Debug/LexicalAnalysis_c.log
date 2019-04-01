@@ -1,0 +1,4 @@
+﻿  LexicalAnalysis_c.cpp
+h:\git\compile\lexicalanalysis_c\lexicalanalysis_c\lexicalanalysis_c.cpp(122): warning C4018: “<”: 有符号/无符号不匹配
+h:\git\compile\lexicalanalysis_c\lexicalanalysis_c\lexicalanalysis_c.cpp(125): warning C4018: “<”: 有符号/无符号不匹配
+  LexicalAnalysis_c.vcxproj -> H:\Git\Compile\LexicalAnalysis_c\Debug\LexicalAnalysis_c.exe
