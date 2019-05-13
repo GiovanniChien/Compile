@@ -51,28 +51,17 @@ using namespace std;
 //错误字符
 #define EROOR 38
 
-//标识符表
-struct Indentifier {
-	string name;//标识符
-	int type;//数据类型
-	Indentifier* parent;
-	vector<Indentifier>* child;
-};
-
 class LexicalAnalysis_c
 {
   private:
 	string token;
 	string preStr;
-	int preType;
-	Indentifier* curParent;
 	char ch;
 	vector<string> keyWords;
 	vector<string> dataTypes;
 	ifstream in;
 	vector<void *> constValueList; //常量表
 	vector<void *> signalList;	 //标识符表
-	vector<Indentifier> indentifiers;//标识符邻接表
 	vector<void *> keyList;		   //保留字表
   public:
 	LexicalAnalysis_c();
@@ -89,15 +78,11 @@ class LexicalAnalysis_c
 	void scanner();
 	void error();
 	void *buildList(int i); //i=0表示构建一个数字常量表 i=1表示构建一个符号表 i=2表示构建一个保留字表
-	int findInditifier(const string name);
-	Indentifier* buildInditifier(const string name, const int type);
 };
 
 LexicalAnalysis_c::LexicalAnalysis_c()
 {
 	preStr = "";
-	preType = 0;
-	curParent = NULL;
 	keyWords = {"main", "return", "if", "else", "for", "while", "void"};
 	dataTypes = {"int", "float", "char", "short", "double", "bool"};
 }
@@ -190,35 +175,6 @@ void *LexicalAnalysis_c::buildList(int i)
 	return p;
 }
 
-int LexicalAnalysis_c::findInditifier(const string name)
-{
-	if (curParent->child == NULL) return -1;
-	vector<Indentifier> vectors = *curParent->child;
-	for (int i = 0; i < vectors.size(); i++) {
-		Indentifier tmp = vectors[i];
-		if (tmp.name == name) return i;		//找到同名变量,重定义
-	}
-	return -1;
-}
-
-Indentifier* LexicalAnalysis_c::buildInditifier(const string name, const int type)
-{
-	Indentifier indentifier;
-	indentifier.parent = curParent;
-	indentifier.child = NULL;
-	indentifier.type = type;
-	if (curParent->child == NULL) {
-		vector<Indentifier> child;
-		child.push_back(indentifier);
-		curParent->child = &child;
-	}
-	else {
-		vector<Indentifier> child = *curParent->child;
-		child.push_back(indentifier);
-	}
-	return &indentifier;
-}
-
 void LexicalAnalysis_c::scanner()
 {
 	token = "";
@@ -244,21 +200,10 @@ void LexicalAnalysis_c::scanner()
 			if (!flag)
 			{
 				//标识符
-				int res = findInditifier(token);
-				if (res != -1) {
-					cout << "变量 " << token << " 重定义" << endl;
-				}
-				else if (preType == 0) {
-					cout << "变量 " << token << "定义非法" << endl;
-				}
-				else {
-					output(token, ID, buildInditifier(token, preType));
-				}
+				output(token, ID, buildList(1));
 			}
 			else
 			{
-				if (flag >= 1 && flag <= 6)
-					preType = flag;
 				output(token, flag, buildList(2));
 			}
 			preStr = token;
@@ -274,7 +219,6 @@ void LexicalAnalysis_c::scanner()
 			}
 			retract();
 			output(token, NUM, buildList(0));
-			preType = 0;
 			preStr = "";
 			//token="";
 		}

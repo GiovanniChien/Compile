@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FirstFollow - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "E:\Users\lhd\AppData\Local\Temp\RSP99D1.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/FirstFollow.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"F:\编译原理\FirstFollow4\FirstFollow4\FirstFollow.cpp"
+]
+Creating command line "cl.exe @E:\Users\lhd\AppData\Local\Temp\RSP99D1.tmp" 
+Creating temporary file "E:\Users\lhd\AppData\Local\Temp\RSP99D2.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/FirstFollow.pdb" /debug /machine:I386 /out:"Debug/FirstFollow.exe" /pdbtype:sept 
+".\Debug\FirstFollow.obj"
+]
+Creating command line "link.exe @E:\Users\lhd\AppData\Local\Temp\RSP99D2.tmp"
+<h3>Output Window</h3>
+Compiling...
+FirstFollow.cpp
+f:\编译原理\firstfollow4\firstfollow4\struct.h(28) : error C2146: syntax error : missing ',' before identifier 'table'
+f:\编译原理\firstfollow4\firstfollow4\struct.h(28) : error C2065: 'table' : undeclared identifier
+f:\编译原理\firstfollow4\firstfollow4\struct.h(28) : error C2143: syntax error : missing '>' before ';'
+f:\编译原理\firstfollow4\firstfollow4\struct.h(28) : error C2208: 'class std::vector' : no members defined using this type
+f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(248) : error C2374: 'i' : redefinition; multiple initialization
+        f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(244) : see declaration of 'i'
+f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(315) : error C2374: 'i' : redefinition; multiple initialization
+        f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(310) : see declaration of 'i'
+f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(324) : error C2374: 'i' : redefinition; multiple initialization
+        f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(310) : see declaration of 'i'
+f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(327) : error C2374: 'i' : redefinition; multiple initialization
+        f:\编译原理\firstfollow4\firstfollow4\firstfollow.cpp(310) : see declaration of 'i'
+Error executing cl.exe.
+
+
+
+<h3>Results</h3>
+FirstFollow.exe - 8 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
