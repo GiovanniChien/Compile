@@ -8,6 +8,6 @@ import java.util.List;
 public class PriorityTable {
 
     public List<Character> element;//所有的终结符,也是行列对应的元素
-    public int[][] table;//-1表示'<.',0表示'=.',1表示'.>'
+    public Integer[][] table;//-1表示'<.',0表示'=.',1表示'.>'
 
 }
