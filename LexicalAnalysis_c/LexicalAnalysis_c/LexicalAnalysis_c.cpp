@@ -51,6 +51,12 @@ using namespace std;
 //错误字符
 #define EROOR 38
 
+struct SIGN {
+	string name;
+	string scope;
+	int type = 0;
+};
+
 class LexicalAnalysis_c
 {
   private:
@@ -61,8 +67,9 @@ class LexicalAnalysis_c
 	vector<string> dataTypes;
 	ifstream in;
 	vector<void *> constValueList; //常量表
-	vector<void *> signalList;	 //标识符表
+	vector<SIGN> signalList;	 //标识符表
 	vector<void *> keyList;		   //保留字表
+	string scope;//当前变量的作用域
   public:
 	LexicalAnalysis_c();
 	void readFile();
@@ -73,25 +80,28 @@ class LexicalAnalysis_c
 	bool isdigit();
 	int reserve();
 	void retract();
-	void output(int category, void *point);
 	void output(string token, int category, void *point);
+	void output(SIGN sign);
 	void scanner();
 	void error();
-	void *buildList(int i); //i=0表示构建一个数字常量表 i=1表示构建一个符号表 i=2表示构建一个保留字表
+	void *buildList(int i); //i=0表示构建一个数字常量表 i=2表示构建一个保留字表
+	SIGN buildSignalList(int type);
 };
 
 LexicalAnalysis_c::LexicalAnalysis_c()
 {
+	ch = NULL;
 	preStr = "";
 	keyWords = {"main", "return", "if", "else", "for", "while", "void"};
 	dataTypes = {"int", "float", "char", "short", "double", "bool"};
+	scope = "global";
 }
 
 void LexicalAnalysis_c::readFile()
 {
 	/*string path;
 	cin >> path;*/
-	in.open("source.c");
+	in.open("source2.c");
 }
 
 void LexicalAnalysis_c::getsym()
@@ -147,32 +157,46 @@ void LexicalAnalysis_c::retract()
 	in.seekg(-1, ios::cur);
 }
 
-void LexicalAnalysis_c::output(int flag, void *point)
-{
-	cout << "Flag:" << flag << "  Point:" << point << endl;
-}
-
 void LexicalAnalysis_c::output(string token, int flag, void *point)
 {
 	cout << "Value:" << token << " Flag:" << flag << " Point:" << point << endl;
 }
 
+void LexicalAnalysis_c::output(SIGN sign)
+{
+	if (sign.type==0)
+	{
+		cout <<"(函数定义) ";
+	}
+	cout << "Value:" << sign.name << " Flag:" << ID
+		<< " Point:" << &sign << " Scope:" << sign.scope << endl;
+}
+
 void *LexicalAnalysis_c::buildList(int i)
 {
-	void *p = new string(token);
+	void* p;
 	switch (i)
 	{
 	case 0: //常量表
+		p = new string(token);
 		constValueList.push_back(p);
 		break;
-	case 1: //标识符表
-		signalList.push_back(p);
-		break;
-	case 2: //保留字表
-		signalList.push_back(p);
+	default: //保留字表
+		p = new string(token);
+		keyList.push_back(p);
 		break;
 	}
 	return p;
+}
+
+SIGN LexicalAnalysis_c::buildSignalList(int type)
+{
+	SIGN sign;
+	sign.name = token;
+	sign.scope = scope;
+	sign.type = type;
+	signalList.push_back(sign);
+	return sign;
 }
 
 void LexicalAnalysis_c::scanner()
@@ -200,10 +224,24 @@ void LexicalAnalysis_c::scanner()
 			if (!flag)
 			{
 				//标识符
-				output(token, ID, buildList(1));
+				//output(token, ID, buildList(1));
+				getsym();
+				if (ch == '(') {
+					//找到的这个标识符是函数名
+					output(buildSignalList(0));
+					scope = token;
+				}
+				else {
+					output(buildSignalList(1));
+				}
+				retract();
 			}
 			else
 			{
+				//保留字为main
+				if (flag == 7) {
+					scope = token;
+				}
 				output(token, flag, buildList(2));
 			}
 			preStr = token;
@@ -223,23 +261,23 @@ void LexicalAnalysis_c::scanner()
 			//token="";
 		}
 		else if (ch == '+')
-			output(PLUSOP, NULL);
+			output("+",PLUSOP, NULL);
 		else if (ch == '-')
-			output(DIVIDIONOP, NULL);
+			output("-",DIVIDIONOP, NULL);
 		else if (ch == '*')
-			output(MULTIPLYOP, NULL);
+			output("*",MULTIPLYOP, NULL);
 		else if (ch == '/')
-			output(DIVIDIONOP, NULL);
+			output("/",DIVIDIONOP, NULL);
 		else if (ch == '|')
 		{
 			strcatc();
 			getsym();
 			if (ch == '|')
-				output(OROP, NULL);
+				output("||",OROP, NULL);
 			else
 			{
 				retract();
-				output(BITOROP, NULL);
+				output("|",BITOROP, NULL);
 			}
 		}
 		else if (ch == '&')
@@ -247,11 +285,11 @@ void LexicalAnalysis_c::scanner()
 			strcatc();
 			getsym();
 			if (ch == '&')
-				output(ANDOP, NULL);
+				output("&&",ANDOP, NULL);
 			else
 			{
 				retract();
-				output(BITANDOP, NULL);
+				output("||",BITANDOP, NULL);
 			}
 		}
 		else if (ch == '>')
@@ -259,11 +297,11 @@ void LexicalAnalysis_c::scanner()
 			strcatc();
 			getsym();
 			if (ch == '=')
-				output(GE, NULL);
+				output(">=",GE, NULL);
 			else
 			{
 				retract();
-				output(GT, NULL);
+				output(">",GT, NULL);
 			}
 		}
 		else if (ch == '<')
@@ -271,31 +309,33 @@ void LexicalAnalysis_c::scanner()
 			strcatc();
 			getsym();
 			if (ch == '=')
-				output(LE, NULL);
+				output("<=",LE, NULL);
 			else
 			{
 				retract();
-				output(LT, NULL);
+				output("<",LT, NULL);
 			}
 		}
 		else if (ch == '{')
-			output(LBB, NULL);
-		else if (ch == '}')
-			output(RBB, NULL);
+			output("{",LBB, NULL);
+		else if (ch == '}') {
+			output("}",RBB, NULL);
+			scope = "global";
+		}
 		else if (ch == '(')
-			output(LSB, NULL);
+			output("(",LSB, NULL);
 		else if (ch == ')')
-			output(RSB, NULL);
+			output(")", RSB, NULL);
 		else if (ch == '=')
 		{
 			strcatc();
 			getsym();
 			if (ch == '=')
-				output(EQ, NULL);
+				output("==", EQ, NULL);
 			else
 			{
 				retract();
-				output(ASSIGN, NULL);
+				output("=", ASSIGN, NULL);
 			}
 		}
 		else if (ch == '!')
@@ -303,17 +343,17 @@ void LexicalAnalysis_c::scanner()
 			strcatc();
 			getsym();
 			if (ch == '=')
-				output(NE, NULL);
+				output("!=", NE, NULL);
 			else
 			{
 				retract();
-				output(BITNOTOP, NULL);
+				output("!", BITNOTOP, NULL);
 			}
 		}
 		else if (ch == ';')
-			output(SEMI, NULL);
+			output(";", SEMI, NULL);
 		else if (ch == ',')
-			output(COMMA, NULL);
+			output(",", COMMA, NULL);
 		else
 			error();
 		token = "";

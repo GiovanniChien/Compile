@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7652d689-511c-4d4e-b553-b4c62b1f47b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/AnalysisTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Grammar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Project.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pojo/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OperatorGrammar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OperatorGrammar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OperatorGrammar/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OperatorGrammar/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OperatorGrammar/src/main/java/pojo/PriorityTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OperatorGrammar/src/main/java/pojo/PriorityTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OperatorGrammar/target/classes/META-INF/OperatorGrammar.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OperatorGrammar/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OperatorGrammar/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/.vs/LexicalAnalysis_c/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/.vs/LexicalAnalysis_c/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/.vs/LexicalAnalysis_c/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/.vs/LexicalAnalysis_c/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/Debug/LexicalAnalysis_c.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalA.63B567EB.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalA.63B567EB.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalAnalysis_c.log" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalAnalysis_c.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalAnalysis_c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/LexicalAnalysis_c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/LexicalAnalysis_c.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/LexicalAnalysis_c.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/source.c" beforeDir="false" afterPath="$PROJECT_DIR$/../LexicalAnalysis_c/LexicalAnalysis_c/source.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="389" column="42" selection-start-line="389" selection-start-column="42" selection-end-line="389" selection-end-column="42" />
+            <state relative-caret-position="-480">
+              <caret line="368" column="13" lean-forward="true" selection-start-line="368" selection-start-column="13" selection-end-line="368" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -244,16 +244,20 @@
       <workItem from="1559008715476" duration="4007000" />
       <workItem from="1559027629411" duration="13693000" />
       <workItem from="1559095249036" duration="13000" />
+      <workItem from="1560821249656" duration="275000" />
+      <workItem from="1560821918458" duration="864000" />
+      <workItem from="1561944022492" duration="37000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17713000" />
+    <option name="totallyTimeSpent" value="18889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25699168" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26832956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -273,6 +277,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32891247" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,8 +329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="389" column="42" selection-start-line="389" selection-start-column="42" selection-end-line="389" selection-end-column="42" />
+        <state relative-caret-position="-480">
+          <caret line="368" column="13" lean-forward="true" selection-start-line="368" selection-start-column="13" selection-end-line="368" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
